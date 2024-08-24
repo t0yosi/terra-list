@@ -35,7 +35,7 @@ const Header = () => {
               <div className="flex items-center gap-3">
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=purple&shade=800"
                   alt="Terra List"
                 />
                 <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">

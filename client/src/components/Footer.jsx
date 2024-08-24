@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
     <div className="w-full bg-gray-100">
-      <div className="px-8 py-4 border-t-2 border-[#f4511e]">
+      <div className="px-8 py-4 border-t-2 border-[#cf35f5]">
         <div className="flex flex-col lg:flex-row items-center justify-between max-w-screen-xl mx-auto">
           <div className="flex flex-col items-center lg:w-1/2 mb-8 lg:mb-0">
-            <div className="bg-[#f4511e] p-4 rounded-full shadow-md">
+            <div className=" p-4 rounded-full shadow-md">
               <img
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                src="https://tailwindui.com/img/logos/mark.svg?color=purple&shade=800"
                 alt="Terra List"
                 className="w-16 h-auto"
               />
@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="lg:w-1/2">
             <div className="mb-4 text-center text-gray-800">
               <FontAwesomeIcon
-                className="text-[#f4511e] mr-2"
+                className="text-[#cf35f5] mr-2"
                 icon="location-pin"
               />
               Faulconer Drive, Suite 4 • Charlottesville, CA, 12345
@@ -28,13 +28,13 @@ const Footer = () => {
               <div className="flex flex-col lg:w-1/2 mb-4 lg:mb-0">
                 <div className="flex items-center mb-2">
                   <FontAwesomeIcon
-                    className="text-[#f4511e] mr-2"
+                    className="text-[#cf35f5] mr-2"
                     icon="phone"
                   />
                   (123) 456-7890
                 </div>
                 <div className="flex items-center">
-                  <FontAwesomeIcon className="text-[#f4511e] mr-2" icon="fax" />
+                  <FontAwesomeIcon className="text-[#cf35f5] mr-2" icon="fax" />
                   (123) 456-7890
                 </div>
               </div>
@@ -44,7 +44,7 @@ const Footer = () => {
                 href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "facebook"]} />
               </a>
@@ -52,7 +52,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "twitter"]} />
               </a>
@@ -60,7 +60,7 @@ const Footer = () => {
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "linkedin"]} />
               </a>
@@ -68,7 +68,7 @@ const Footer = () => {
                 href="https://www.youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "youtube"]} />
               </a>
@@ -76,7 +76,7 @@ const Footer = () => {
                 href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "instagram"]} />
               </a>
@@ -84,7 +84,7 @@ const Footer = () => {
                 href="https://plus.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "google-plus"]} />
               </a>
@@ -92,7 +92,7 @@ const Footer = () => {
                 href="https://www.pinterest.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#f4511e] hover:text-[#d43f0b] transition-colors"
+                className="text-[#cf35f5] hover:text-[#d43f0b] transition-colors"
               >
                 <FontAwesomeIcon icon={["fab", "pinterest"]} />
               </a>
@@ -106,31 +106,31 @@ const Footer = () => {
             <p className="text-gray-800 text-sm">
               <a
                 href="/about"
-                className="hover:text-[#f4511e] transition-colors mr-4"
+                className="hover:text-[#cf35f5] transition-colors mr-4"
               >
                 ABOUT US
               </a>
               <a
                 href="/contact"
-                className="hover:text-[#f4511e] transition-colors mr-4"
+                className="hover:text-[#cf35f5] transition-colors mr-4"
               >
                 CONTACT US
               </a>
               <a
                 href="/help"
-                className="hover:text-[#f4511e] transition-colors mr-4"
+                className="hover:text-[#cf35f5] transition-colors mr-4"
               >
                 HELP
               </a>
               <a
                 href="/privacy-policy"
-                className="hover:text-[#f4511e] transition-colors mr-4"
+                className="hover:text-[#cf35f5] transition-colors mr-4"
               >
                 PRIVACY POLICY
               </a>
               <a
                 href="/disclaimer"
-                className="hover:text-[#f4511e] transition-colors"
+                className="hover:text-[#cf35f5] transition-colors"
               >
                 DISCLAIMER
               </a>
