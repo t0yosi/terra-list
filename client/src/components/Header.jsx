@@ -26,8 +26,9 @@ const Header = () => {
     }
   }, [location.search]);
   return (
-    <header>
-      <nav className="bg-gray-800">
+    // <header className="border-b border-white md:border-none sticky top-0 z-10 backdrop-blur ">
+    <header className="sticky top-0 z-10 backdrop-blur ">
+      <nav className="py-auto bg-transparent">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex flex-col sm:flex-row sm:justify-between h-auto sm:h-16 items-center">
             <div className="flex items-center justify-between w-full sm:w-auto">
@@ -42,10 +43,10 @@ const Header = () => {
                   <span className="text-slate-500">List</span>
                 </h1>
               </div>
-              <div className="flex items-center sm:hidden">
+              <div className="flex items-center sm:hidden  ">
                 <button
                   type="button"
-                  className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  className="relative inline-flex items-center justify-center border border-violet-400 rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                   aria-controls="mobile-menu"
                   aria-expanded={isMobileMenuOpen}
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -89,8 +90,10 @@ const Header = () => {
               <Link to="/">
                 <div
                   className={`${
-                    isActive("/") ? "bg-gray-900 text-white" : "text-gray-300"
-                  } rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white`}
+                    isActive("/")
+                      ? "bg-white/70 border border-purple-600 text-purple-700"
+                      : "text-purple-700/60"
+                  } rounded-md px-3 py-2 text-sm lg:text-lg font-medium hover:bg-violet-500 hover:text-white`}
                   aria-current={isActive("/") ? "page" : undefined}
                 >
                   Home
@@ -100,9 +103,9 @@ const Header = () => {
                 <div
                   className={`${
                     isActive("/about")
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300"
-                  } rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white`}
+                      ? "bg-white/70 border border-purple-600 text-purple-700"
+                      : "text-purple-700/60"
+                  } rounded-md px-3 py-2 text-sm lg:text-lg font-medium hover:bg-violet-500 hover:text-white`}
                   aria-current={isActive("/about") ? "page" : undefined}
                 >
                   About
@@ -111,10 +114,10 @@ const Header = () => {
               <Link to="/search">
                 <div
                   className={`${
-                    isActive("/about")
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300"
-                  } rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white`}
+                    isActive("/search")
+                      ? "bg-white/70 border border-purple-600 text-purple-700"
+                      : "text-purple-700/60"
+                  } rounded-md px-3 py-2 text-sm lg:text-lg font-medium hover:bg-violet-500 hover:text-white`}
                   aria-current={isActive("/search") ? "page" : undefined}
                 >
                   Listings
@@ -124,7 +127,7 @@ const Header = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between w-full sm:w-auto mb-3 sm:mb-0">
               <form
                 onSubmit={handleSubmit}
-                className="bg-slate-100 p-3 rounded-lg flex items-center h-7 mt-3 sm:mt-0 sm:ml-auto w-full"
+                className="bg-slate-100 border border-purple-600 p-3 rounded-lg flex items-center h-7 mt-3 sm:mt-0 sm:ml-auto w-full"
               >
                 <input
                   type="text"
