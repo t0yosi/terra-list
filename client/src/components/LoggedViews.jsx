@@ -19,7 +19,7 @@ export const LoggedInView = ({ user }) => {
   const closeMenu = () => {
     setMenuOpen(false);
   };
-  
+
   const handleSignOut = async () => {
     try {
       dispatch(signOutStart());
@@ -97,15 +97,34 @@ export const LoggedOutView = () => {
   return (
     <div className="ml-3 md:order-3 flex items-center space-x-3">
       <Link to="/sign-up">
-        <button className="w-20 h-8 rounded-lg text-white hover:bg-gray-700 bg-gray-800 border border-white">
+        <button className="w-20 h-8 rounded-lg text-white hover:bg-violet-700 bg-purple-800 border border-white">
           Sign Up
         </button>
       </Link>
       <Link to="/sign-in">
-        <button className="w-20 h-8 rounded-lg bg-white hover:bg-gray-700 hover:text-white">
+        <button className="w-20 h-8 rounded-lg bg-white hover:bg-violet-700 hover:text-white">
           Login
         </button>
       </Link>
     </div>
   );
+};
+
+export const MobileViewOptions = () => {
+  <div>
+    <Link
+      to="/profile"
+      className="block px-4 py-2 text-sm text-gray-700"
+      role="menuitem"
+    >
+      Your Profile
+    </Link>
+    <span
+      className="block px-4 py-2 text-sm text-gray-700"
+      role="menuitem"
+      onClick={LoggedInView.handleSignOut}
+    >
+      Sign out
+    </span>
+  </div>;
 };

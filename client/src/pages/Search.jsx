@@ -120,7 +120,7 @@ export default function Search() {
       >
         <button
           onClick={toggleCollapse}
-          className="bg-slate-700 text-white p-2 rounded-md mb-4"
+          className="bg-purple-700 text-white p-2 rounded-md mb-4"
         >
           <FontAwesomeIcon
             icon={isCollapsed ? faAngleDoubleRight : faAngleDoubleLeft}
@@ -223,7 +223,7 @@ export default function Search() {
               <option value="createdAt_asc">Oldest</option>
             </select>
           </div>
-          <button className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95">
+          <button className="bg-purple-700 text-white p-3 rounded-lg uppercase hover:opacity-95">
             Search
           </button>
         </form>
@@ -242,6 +242,7 @@ export default function Search() {
             </p>
           )}
 
+          <div className="flex items-center justify-center"></div>
           {!loading &&
             listings &&
             listings.map((listing) => (

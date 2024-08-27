@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import 'swiper/swiper-bundle.min.css';
 import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css/bundle";
@@ -50,53 +51,72 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover", // Ensures the background image covers the entire container
-          backgroundPosition: "center", // Centers the image
-          backgroundRepeat: "no-repeat", // Prevents the image from repeating
-        }}
-        className="h-[492px] md:h-[800px] text-center relative flex flex-col justify-items-center"
-      >
-        {/* top */}
-        <div className="flex flex-col gap-6 p-28 py-16 px-3 max-w-6xl mx-auto my-auto text-center justify-center align-middle">
-          <h1 className="text-white font-bold text-4xl lg:text-6xl">
-            Find your next{" "}
-            <span className="text-amber-500/80 font-extrabold">perfect </span>
-            place with ease
-          </h1>
-          <div className="text-white text-xs sm:text-xl">
-            Terra List is the best place to find your next perfect place to
-            live.
-            <br />
-            We have a wide range of properties for you to choose from.
+      <div>
+        <div
+          style={{
+            backgroundImage: `url(${bg})`,
+            backgroundSize: "cover", // Ensures the background image covers the entire container
+            backgroundPosition: "center", // Centers the image
+            backgroundRepeat: "no-repeat", // Prevents the image from repeating
+          }}
+          className="h-[492px] md:h-[800px] text-center relative flex flex-col justify-items-center"
+        >
+          {/* top */}
+          <div className="flex flex-col gap-6 p-28 py-16 px-3 max-w-6xl mx-auto my-auto text-center justify-center align-middle">
+            <h1 className="text-white font-bold text-4xl lg:text-6xl">
+              Find your next{" "}
+              <span className="text-amber-500/80 font-extrabold">perfect </span>
+              place with ease
+            </h1>
+            <div className="text-white text-xs sm:text-xl">
+              Terra List is the best place to find your next perfect place to
+              live.
+              <br />
+              We have a wide range of properties for you to choose from.
+            </div>
+            <Link
+              to={"/search"}
+              className="text-xs sm:text-lg text-blue-800 font-bold hover:underline rounded-lg"
+            >
+              <Button>Lets get started...</Button>
+            </Link>
           </div>
-          <Link
-            to={"/search"}
-            className="text-xs sm:text-lg text-blue-800 font-bold hover:underline rounded-lg"
-          >
-            <Button>Lets get started...</Button>
-          </Link>
+        </div>
+        <div>
+          <HeroAbout />
         </div>
 
         {/* swiper */}
-        <Swiper navigation>
+        <Swiper
+          navigation
+          spaceBetween={20}
+          slidesPerView={1}
+          loop={true}
+          className="my-4"
+        >
           {offerListings &&
             offerListings.length > 0 &&
             offerListings.map((listing) => (
               <SwiperSlide key={listing._id}>
                 <div
                   style={{
-                    background: `url(${listing.imageUrls[0]}) center no-repeat`,
+                    backgroundImage: `url(${listing.imageUrls[0]})`,
                     backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
-                  className="h-[500px]"
-                ></div>
+                  className="relative w-[75%] mx-auto h-[500px] rounded-lg shadow-lg overflow-hidden"
+                >
+                  {/* Optional overlay for better text visibility */}
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                    {/* Add any text or content here */}
+                    <h2 className="text-white text-2xl font-bold">
+                      {listing.name}
+                    </h2>
+                  </div>
+                </div>
               </SwiperSlide>
             ))}
         </Swiper>
-
         {/* listing results for offer, sale and rent */}
 
         <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
@@ -113,14 +133,14 @@ export default function Home() {
                   Show more offers
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-1">
                 {offerListings.map((listing) => (
                   <ListingItem listing={listing} key={listing._id} />
                 ))}
               </div>
             </div>
           )}
-          {rentListings && rentListings.length > 0 && (
+          {/* {rentListings && rentListings.length > 0 && (
             <div>
               <div className="my-3">
                 <h2 className="text-2xl font-semibold text-slate-600">
@@ -133,7 +153,7 @@ export default function Home() {
                   Show more places for rent
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-1">
                 {rentListings.map((listing) => (
                   <ListingItem listing={listing} key={listing._id} />
                 ))}
@@ -153,18 +173,15 @@ export default function Home() {
                   Show more places for sale
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-1">
                 {saleListings.map((listing) => (
                   <ListingItem listing={listing} key={listing._id} />
                 ))}
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>{" "}
-      <div>
-        <HeroAbout />
-      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { LoggedInView, LoggedOutView } from "./LoggedViews";
+import { LoggedInView, LoggedOutView, MobileViewOptions } from "./LoggedViews";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ const Header = () => {
                 />
                 <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
                   <span className="text-orange-500">Terra</span>
-                  <span className="text-slate-500">List</span>
+                  <span className="text-violet-500">List</span>
                 </h1>
               </div>
               <div className="flex items-center sm:hidden  ">
@@ -159,7 +159,7 @@ const Header = () => {
             <Link to="/">
               <div
                 className={`${
-                  isActive("/") ? "bg-gray-900 text-white" : "text-gray-300"
+                  isActive("/") ? "bg-purple-900 text-white" : "text-purple-500"
                 } block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white`}
                 aria-current={isActive("/") ? "page" : undefined}
               >
@@ -170,16 +170,39 @@ const Header = () => {
               <div
                 className={`${
                   isActive("/about")
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-300"
+                    ? "bg-purple-900 text-white"
+                    : "text-purple-500"
                 } block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white`}
                 aria-current={isActive("/about") ? "page" : undefined}
               >
                 About
               </div>
             </Link>
+            <Link to="/search">
+              <div
+                className={`${
+                  isActive("/search")
+                    ? "bg-purple-900 text-white"
+                    : "text-purple-500"
+                } block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white`}
+                aria-current={isActive("/search") ? "page" : undefined}
+              >
+                Search
+              </div>
+            </Link>
             {currentUser ? (
-              <LoggedInView user={currentUser} />
+              <Link
+                to="/profile"
+                className={`${
+                  isActive("/profile")
+                    ? "bg-purple-900 text-white"
+                    : "text-purple-500"
+                } block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white`}
+                aria-current={isActive("/profile") ? "page" : undefined}
+                role="menuitem"
+              >
+                Profile
+              </Link>
             ) : (
               <LoggedOutView />
             )}
