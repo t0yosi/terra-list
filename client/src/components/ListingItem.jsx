@@ -68,7 +68,7 @@ export default function ListingItem({ listing }) {
           />
 
           {/* Card Body */}
-          <div className="p-6 my-auto">
+          <div className="p-6 my-auto space-y-1">
             <p className="truncate text-lg font-semibold text-purple-700">
               {listing.name}
             </p>
@@ -77,7 +77,7 @@ export default function ListingItem({ listing }) {
                 <MdLocationOn className="h-4 w-4 text-green-700" />
                 <p className="text-sm font-regular">{listing.address}</p>
               </div>
-              <p className="text-sm text-gray-600">{listing.type}</p>
+              <p className="text-xs text-orange-700 uppercase font-bold ">{listing.type}</p>
             </div>
             <p className="text-sm text-gray-600 line-clamp-2">
               {listing.description}
@@ -87,8 +87,7 @@ export default function ListingItem({ listing }) {
               {listing.offer
                 ? listing.discountedPrice.toLocaleString("en-US")
                 : listing.regularPrice.toLocaleString("en-US")}
-                <div className="uppercase font-bold text-orange-700">{listing.type === "rent" && " / month"}</div>
-              
+              {listing.type === "rent" && " / month"}
             </p>
           </div>
 

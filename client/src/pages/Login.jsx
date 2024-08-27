@@ -82,7 +82,7 @@ export default function Login() {
         />
         <button
           disabled={loading}
-          className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+          className="bg-purple-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
         >
           {loading ? "Loading..." : "Sign In"}
         </button>
@@ -91,7 +91,7 @@ export default function Login() {
       <div className="flex gap-2 mt-5 mx-auto">
         <p>Dont have an account?</p>
         <Link to={"/sign-up"}>
-          <span className="text-blue-700">Sign up</span>
+          <span className="text-purple-700">Sign up</span>
         </Link>
       </div>
       {error && <p className="text-red-700">{error}</p>}

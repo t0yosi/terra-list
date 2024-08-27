@@ -264,7 +264,7 @@ export default function Profile() {
           type="text"
           placeholder="username"
           id="username"
-          className="border-2 border-gray-300 rounded-lg p-3 w-full"
+          className="border-2 border-purple-400 rounded-lg p-3 w-full"
           onChange={handleInputChange}
           defaultValue={formData.username || currentUser.username}
         />
@@ -272,7 +272,7 @@ export default function Profile() {
           type="email"
           id="email"
           placeholder="email"
-          className="border-2 border-gray-300 rounded-md p-3 w-full"
+          className="border-2 border-purple-400 rounded-md p-3 w-full"
           onChange={handleInputChange}
           defaultValue={formData.email || currentUser.email}
         />
@@ -280,18 +280,18 @@ export default function Profile() {
           type="password"
           id="password"
           placeholder="password"
-          className="border-2 border-gray-300 rounded-md p-3 w-full"
+          className="border-2 border-purple-400 rounded-md p-3 w-full"
           defaultValue={formData.password || ""}
           onChange={handleInputChange}
         />
         <button
           disabled={loading}
-          className="bg-slate-700 hover:opacity95  text-white rounded-lg p-3 uppercase disabled:opacity-80"
+          className="bg-white hover:opacity95  text-purple-600 rounded-lg p-3 uppercase disabled:opacity-80"
         >
           {loading ? "Loading..." : "Update Profile"}
         </button>
         <Link
-          className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+          className="bg-purple-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
           to={"/create-listing"}
         >
           Create Listing
@@ -313,7 +313,7 @@ export default function Profile() {
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User is updated successfully!" : ""}
       </p>
-      <button onClick={handleShowListings} className="text-green-700 w-full">
+      <button onClick={handleShowListings} className="text-indigo-700 w-full">
         Show Listings
       </button>
       <p className="text-red-700 mt-5">

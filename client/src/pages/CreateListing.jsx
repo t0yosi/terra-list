@@ -201,217 +201,257 @@ export default function CreateListing() {
     }
   };
   return (
-    <main className="p-3 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">
-        Create a Listing
-      </h1>
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
-        <div className="flex flex-col gap-4 flex-1">
-          <input
-            type="text"
-            placeholder="Name"
-            className="border p-3 rounded-lg"
-            id="name"
-            maxLength="62"
-            minLength="10"
-            required
-            onChange={handleChange}
-            value={formData.name}
-          />
-          <textarea
-            type="text"
-            placeholder="Description"
-            className="border p-3 rounded-lg"
-            id="description"
-            required
-            onChange={handleChange}
-            value={formData.description}
-          />
-          <input
-            type="text"
-            placeholder="Address"
-            className="border p-3 rounded-lg"
-            id="address"
-            required
-            onChange={handleChange}
-            value={formData.address}
-          />
-          <div className="flex gap-6 flex-wrap">
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="sale"
-                className="w-5"
-                onChange={handleChange}
-                checked={formData.type === "sale"}
-              />
-              <span>Sell</span>
-            </div>
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="rent"
-                className="w-5"
-                onChange={handleChange}
-                checked={formData.type === "rent"}
-              />
-              <span>Rent</span>
-            </div>
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="parking"
-                className="w-5"
-                onChange={handleChange}
-                checked={formData.parking}
-              />
-              <span>Parking spot</span>
-            </div>
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="furnished"
-                className="w-5"
-                onChange={handleChange}
-                checked={formData.furnished}
-              />
-              <span>Furnished</span>
-            </div>
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="offer"
-                className="w-5"
-                onChange={handleChange}
-                checked={formData.offer}
-              />
-              <span>Offer</span>
-            </div>
+    <main className="p-6 max-w-4xl mx-auto bg-white shadow-md rounded-lg">
+      {/* Header Row */}
+      <div className="flex justify-center p-3 pb-0 text-center">
+        <h3 className="text-lg font-semibold text-gray-700">
+          Register Your Property With Us And Be Confident That It Will Be Filled
+          Out!
+        </h3>
+      </div>
+
+      {/* Card Row */}
+      <div className="flex justify-center p-4">
+        <div className="w-full max-w-4xl p-8 bg-white shadow-lg rounded-lg">
+          {/* Card Title */}
+          <div className="mb-6 text-center">
+            <h4 className="text-2xl uppercase font-bold text-purple-600">
+              Add A New Property
+            </h4>
           </div>
-          <div className="flex flex-wrap gap-6">
-            <div className="flex items-center gap-2">
+
+          {/* Form */}
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-8"
+          >
+            {/* Left Column */}
+            <div className="flex flex-col gap-6 flex-1">
               <input
-                type="number"
-                id="bedrooms"
-                min="1"
-                max="10"
+                type="text"
+                placeholder="Name"
+                className="border p-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                id="name"
+                maxLength="62"
+                minLength="10"
                 required
-                className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange}
-                value={formData.bedrooms}
+                value={formData.name}
               />
-              <p>Beds</p>
-            </div>
-            <div className="flex items-center gap-2">
+              <textarea
+                placeholder="Description"
+                className="border p-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                id="description"
+                required
+                onChange={handleChange}
+                value={formData.description}
+              />
               <input
-                type="number"
-                id="bathrooms"
-                min="1"
-                max="10"
+                type="text"
+                placeholder="Address"
+                className="border p-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                id="address"
                 required
-                className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange}
-                value={formData.bathrooms}
+                value={formData.address}
               />
-              <p>Baths</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                id="regularPrice"
-                min="50"
-                max="10000000"
-                required
-                className="p-3 border border-gray-300 rounded-lg"
-                onChange={handleChange}
-                value={formData.regularPrice}
-              />
-              <div className="flex flex-col items-center">
-                <p>Regular price</p>
-                {formData.type === "rent" && (
-                  <span className="text-xs">($ / month)</span>
+              <div className="flex gap-6 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="sale"
+                    className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                    onChange={handleChange}
+                    checked={formData.type === "sale"}
+                  />
+                  <label htmlFor="sale" className="text-gray-700">
+                    Sell
+                  </label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="rent"
+                    className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                    onChange={handleChange}
+                    checked={formData.type === "rent"}
+                  />
+                  <label htmlFor="rent" className="text-gray-700">
+                    Rent
+                  </label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="parking"
+                    className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                    onChange={handleChange}
+                    checked={formData.parking}
+                  />
+                  <label htmlFor="parking" className="text-gray-700">
+                    Parking spot
+                  </label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="furnished"
+                    className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                    onChange={handleChange}
+                    checked={formData.furnished}
+                  />
+                  <label htmlFor="furnished" className="text-gray-700">
+                    Furnished
+                  </label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="offer"
+                    className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                    onChange={handleChange}
+                    checked={formData.offer}
+                  />
+                  <label htmlFor="offer" className="text-gray-700">
+                    Offer
+                  </label>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="number"
+                    id="bedrooms"
+                    min="1"
+                    max="10"
+                    required
+                    className="p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    onChange={handleChange}
+                    value={formData.bedrooms}
+                  />
+                  <p className="text-gray-700">Beds</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="number"
+                    id="bathrooms"
+                    min="1"
+                    max="10"
+                    required
+                    className="p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    onChange={handleChange}
+                    value={formData.bathrooms}
+                  />
+                  <p className="text-gray-700">Baths</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="number"
+                    id="regularPrice"
+                    min="50"
+                    max="10000000"
+                    required
+                    className="p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    onChange={handleChange}
+                    value={formData.regularPrice}
+                  />
+                  <div className="flex flex-col items-center">
+                    <p className="text-gray-700">Regular price</p>
+                    {formData.type === "rent" && (
+                      <span className="text-xs text-orange-500">
+                        ($ / month)
+                      </span>
+                    )}
+                  </div>
+                </div>
+                {formData.offer && (
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="number"
+                      id="discountedPrice"
+                      min="0"
+                      max="10000000"
+                      required
+                      className="p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      onChange={handleChange}
+                      value={formData.discountPrice}
+                    />
+                    <div className="flex flex-col items-center">
+                      <p className="text-gray-700">Discounted price</p>
+                      {formData.type === "rent" && (
+                        <span className="text-xs text-gray-500">
+                          ($ / month)
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
-            {formData.offer && (
-              <div className="flex items-center gap-2">
+            {/* Right Column */}
+            <div className="flex flex-col flex-1 gap-6">
+              <p className="font-semibold text-gray-800">
+                Images:
+                <span className="font-normal text-orange-600 ml-2">
+                  The first image will be the cover
+                </span>
+                <span className="font-normal text-gray-800 ml-2">
+                  (max 6)
+                </span>
+              </p>
+              <div className="flex gap-4">
                 <input
-                  type="number"
-                  id="discountedPrice"
-                  min="0"
-                  max="10000000"
-                  required
-                  className="p-3 border border-gray-300 rounded-lg"
-                  onChange={handleChange}
-                  value={formData.discountPrice}
-                />
-                <div className="flex flex-col items-center">
-                  <p>Discounted price</p>
-                  {formData.type === "rent" && (
-                    <span className="text-xs">($ / month)</span>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="flex flex-col flex-1 gap-4">
-          <p className="font-semibold">
-            Images:
-            <span className="font-normal text-gray-600 ml-2">
-              The first image will be the cover (max 6)
-            </span>
-          </p>
-          <div className="flex gap-4">
-            <input
-              onChange={(e) => setFiles(e.target.files)}
-              className="p-3 border border-gray-300 rounded w-full"
-              type="file"
-              id="images"
-              accept="image/*"
-              multiple
-            />
-            <button
-              type="button"
-              disabled={uploading}
-              onClick={handleImageSubmit}
-              className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80"
-            >
-              {uploading ? "Uploading..." : "Upload"}
-            </button>
-          </div>
-          <p className="text-red-700 text-sm">
-            {imageUploadError && imageUploadError}
-          </p>
-          {formData.imageUrls.length > 0 &&
-            formData.imageUrls.map((url, index) => (
-              <div
-                key={url}
-                className="flex justify-between p-3 border items-center"
-              >
-                <img
-                  src={url}
-                  alt="listing image"
-                  className="w-20 h-20 object-contain rounded-lg"
+                  onChange={(e) => setFiles(e.target.files)}
+                  className="p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 w-full"
+                  type="file"
+                  id="images"
+                  accept="image/*"
+                  multiple
                 />
                 <button
                   type="button"
-                  onClick={() => handleRemoveImage(index)}
-                  className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75"
+                  disabled={uploading}
+                  onClick={handleImageSubmit}
+                  className="p-3 text-green-800 bg-white/70 rounded-lg uppercase hover:bg-green-700 disabled:opacity-80 border border-green-800 hover:text-white hover:border-white/50"
                 >
-                  Delete
+                  {uploading ? "Uploading..." : "Upload"}
                 </button>
               </div>
-            ))}
-          <button
-            disabled={loading || uploading}
-            className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
-          >
-            {loading ? "Creating..." : "Create listing"}
-          </button>
-          {error && <p className="text-red-700 text-sm">{error}</p>}
+              {imageUploadError && (
+                <p className="text-red-500 text-sm">{imageUploadError}</p>
+              )}
+              {formData.imageUrls.length > 0 &&
+                formData.imageUrls.map((url, index) => (
+                  <div
+                    key={url}
+                    className="flex justify-between items-center p-3 border rounded-lg"
+                  >
+                    <img
+                      src={url}
+                      alt="listing image"
+                      className="w-20 h-20 object-contain rounded-lg"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveImage(index)}
+                      className="p-2 text-red-600 bg-red-100 rounded-lg uppercase hover:bg-red-200"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                ))}
+              <button
+                disabled={loading || uploading}
+                className="p-3 bg-purple-600 text-white rounded-lg uppercase hover:bg-white hover:text-purple-600 hover:border hover:border-purple-700 disabled:opacity-80"
+              >
+                {loading ? "Creating..." : "Create listing"}
+              </button>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </main>
   );
 }
