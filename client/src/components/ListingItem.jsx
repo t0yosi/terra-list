@@ -68,8 +68,8 @@ export default function ListingItem({ listing }) {
           />
 
           {/* Card Body */}
-          <div className="p-6">
-            <p className="truncate text-lg font-semibold text-slate-700">
+          <div className="p-6 my-auto">
+            <p className="truncate text-lg font-semibold text-purple-700">
               {listing.name}
             </p>
             <div className="flex flex-row justify-between">
@@ -87,7 +87,8 @@ export default function ListingItem({ listing }) {
               {listing.offer
                 ? listing.discountedPrice.toLocaleString("en-US")
                 : listing.regularPrice.toLocaleString("en-US")}
-              {listing.type === "rent" && " / month"}
+                <div className="uppercase font-bold text-orange-700">{listing.type === "rent" && " / month"}</div>
+              
             </p>
           </div>
 

@@ -97,7 +97,7 @@ export const LoggedOutView = () => {
   return (
     <div className="ml-3 md:order-3 flex items-center space-x-3">
       <Link to="/sign-up">
-        <button className="w-20 h-8 rounded-lg text-white hover:bg-violet-700 bg-purple-800 border border-white">
+        <button className="w-20 h-8 rounded-lg text-white hover:bg-violet-700 bg-purple-600 ">
           Sign Up
         </button>
       </Link>
