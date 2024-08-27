@@ -33,8 +33,8 @@ export default function CreateListing() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(formData);
-  console.log(currentUser);
+  // console.log(formData);
+  // console.log(currentUser);
 
   useEffect(() => {
     if (currentUser) {
