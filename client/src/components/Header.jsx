@@ -190,7 +190,31 @@ const Header = () => {
                 Search
               </div>
             </Link>
-            {currentUser ? <MobileViewOptions /> : <LoggedOutView />}
+            {currentUser ? (
+              <div>
+                <Link
+                  to="/profile"
+                  className={`${
+                    isActive("/profile")
+                      ? "bg-purple-900 text-white"
+                      : "text-purple-500"
+                  } block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white`}
+                  aria-current={isActive("/profile") ? "page" : undefined}
+                  role="menuitem"
+                >
+                  Profile
+                </Link>
+                <span
+                  className="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  onClick={LoggedInView.handleSignOut}
+                >
+                  Sign out
+                </span>
+              </div>
+            ) : (
+              <LoggedOutView />
+            )}
           </div>
         </div>
       </nav>
